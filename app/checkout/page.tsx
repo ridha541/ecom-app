@@ -35,7 +35,7 @@ export default function CheckoutPage() {
   }
 
   return (
-    <div className="min-h-[93.5vh] overflow-hidden p-6 max-w-3xl mx-auto">
+    <div className="min-h-[54vh] overflow-hidden p-6 max-w-3xl text-black mx-auto">
       <h1 className="text-3xl font-bold mb-6 text-center text-gray-800">Checkout</h1>
 
       {success ? (

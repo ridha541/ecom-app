@@ -3,9 +3,15 @@
 import { motion } from 'framer-motion';
 import { useAppDispatch } from '@/lib/store';
 import { addToCart } from '@/lib/cartSlice';
+import toast from 'react-hot-toast';
 
 export default function ProductCard({ product }: { product: any }) {
   const dispatch = useAppDispatch();
+
+   const handleAddToCart = () => {
+    dispatch(addToCart({ ...product, quantity: 1 }));
+    toast.success(`${product.title} added to cart`);
+  };
 
   return (
     <motion.div
@@ -27,7 +33,7 @@ export default function ProductCard({ product }: { product: any }) {
 
   <motion.button
     whileTap={{ scale: 0.95 }}
-    onClick={() => dispatch(addToCart({ ...product, quantity: 1 }))}
+    onClick={handleAddToCart}
     className="mt-auto bg-[#c8bdb5] text-white py-2 px-4 rounded-lg hover:bg-[#b5a89e] transition"
 
   >
